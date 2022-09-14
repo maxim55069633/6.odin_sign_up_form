@@ -1,6 +1,6 @@
 # odin_sign_up_form
 
-Live preview: 
+[Live preview](https://maxim55069633.github.io/odin_sign_up_form/)
 
 This project aims to create a sign-up form for chess lovers. I apply most of the new techinques I have learned in the module of Intermediate HTML and CSS. I also successfully solve the following problems:
 1. how to place a submit button outside a form but build a connection between them?
