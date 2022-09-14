@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg_img">
+        <div class="logo_line"><img src="./images/odin-logo.png" alt="odin logo"><span class="brand_name">Odin</span></div>
+        <p>Photo from <a href="https://pixabay.com/photos/chess-chessboard-board-game-1215079/">ha11ok</a> on pixabay</p>
+    </div>
+    <div class="login_section">
+
+
+        <div class="intro">
+            <h1>ChessComrade</h1>
+            <h2>Make your first #ChessComrade today</h2>
+            <p>ChessComrade welcomes everyone. You can find a mentor to improve your chess skills, discuss latest international chess news, or simply play chess with a fellow player.</p>
+            <p>Ready to checkmate!</p>
+        </div>
+
+        <div class="form">
+            <p>Required input with asterisk</p>
+            <form action="#" method="post" id="sign_up_form"> 
+                <div class="flex-item">
+                    <label for="first_name">FIRST NAME<span>*</span> :</label> <br>
+                    <input type="text" name="first_name" id="first_name" aria-label="required" required placeholder="John">
+                </div>
+                <div class="flex-item">
+                    <label for="last_name">LAST NAME<span>*</span> :</label> <br>
+                    <input type="text" name="last_name" id="last_name" aria-label="required" required placeholder="Constantine">
+                </div>
+                <div class="flex-item">
+                    <label for="email">EMAIL<span>*</span> :</label> <br>
+                    <input type="email" name="email" id="email" aria-label="required" required placeholder="JConstantine@DC.com">
+                </div>
+                <div class="flex-item">
+                    <label for="tel">PHONE NUMBER:</label> <br>
+                    <input type="tel" name="tel" id="tel" placeholder="19820510">
+                </div>
+                <div class="flex-item">
+                    <label for="pwd">PASSWORD<span>*</span> :</label> <br>
+                    <input pattern="(?=.*\d)(?=.*[a-zA-Z]).*" minlength="6" maxlength="14" type="password" name="pwd" id="pwd" aria-label="required" required placeholder="Please follow the instructions">
+                    <span></span>
+                </div>
+                <div class="flex-item">
+                    <label for="pwd_confirm">CONFIRM PASSWORD<span>*</span> :</label> <br>
+                    <input type="password" name="pwd_confirm" id="pwd_confirm" aria-label="required" required placeholder="Repeat the password">
+                    <span></span>
+                </div>
+                <p>Your passwords should be 6-14 characters including at least 1 number, 1 letter.</p>
+            </form>
+        </div>
+        
+        <div class="calltoaction">
+            <br>
+            <button type="submit" form="sign_up_form">Create Account</button>
+            <p>Already have an account? <a href="#">Log in</a></p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    
+    const pwd1=document.getElementById('pwd');
+    const pwd2=document.getElementById('pwd_confirm');
+
+    function check_password_same(e){
+        if(pwd1.value !== pwd2.value)
+            {
+                // pwd2.classList.add("resetConfirm");
+                e.target.setCustomValidity("The password you enter this time doesn't match the previous one.");
+            }
+            else
+            {
+                // pwd2.classList.remove("resetConfirm");
+                e.target.setCustomValidity("");
+            }
+    }
+
+    pwd2.addEventListener('change', check_password_same,true);
+</script>
