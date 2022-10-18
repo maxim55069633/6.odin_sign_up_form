@@ -44,6 +44,7 @@
                 <div class="flex-item">
                     <label for="pwd">PASSWORD<span>*</span> :</label> <br>
                     <input pattern="(?=.*\d)(?=.*[a-zA-Z]).*" minlength="6" maxlength="14" type="password" name="pwd" id="pwd" aria-label="required" required placeholder="Please follow the instructions">
+                    <!-- Use regular expression to validation users' input. -->
                     <span></span>
                 </div>
                 <div class="flex-item">
@@ -58,6 +59,7 @@
         <div class="calltoaction">
             <br>
             <button type="submit" form="sign_up_form">Create Account</button>
+            <!-- Place a submit button outside a form but build a connection between them. -->
             <p>Already have an account? <a href="#">Log in</a></p>
         </div>
     </div>
@@ -72,6 +74,8 @@
     function check_password_same(e){
         if(pwd1.value !== pwd2.value)
             {
+                // Use javascript to customize a client-side input validation.
+
                 // pwd2.classList.add("resetConfirm");
                 e.target.setCustomValidity("The password you enter this time doesn't match the previous one.");
             }
